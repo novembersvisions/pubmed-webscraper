@@ -3,3 +3,5 @@ geckodriver.log
 geckodriver
 geckodriver-v0.30.0-macos.tar.gz
 .DS_Store
+emaildetails.py
+__pycache__/emaildetails.cpython-39.pyc
