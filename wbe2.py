@@ -22,7 +22,7 @@ from emaildetails import email
 from emaildetails import password
 
 send_to_email = 'hprice@carboncopies.org'
-subj = 'PubMed Search Titles'
+subj = 'PubMed Articles - Whole Brain Emulation'
 
 msg = MIMEMultipart()
 msg['From'] = email
