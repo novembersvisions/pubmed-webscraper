@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 
-url = "https://pubmed.ncbi.nlm.nih.gov/?term=neuromorphic&sort=date"
+url = "https://pubmed.ncbi.nlm.nih.gov/?term=whole+brain+emulation"
 response = requests.get(url)
 
 soup = BeautifulSoup(response.text, 'html.parser')
