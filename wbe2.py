@@ -6,10 +6,11 @@ url = "https://pubmed.ncbi.nlm.nih.gov/?term=whole+brain+emulation"
 response = requests.get(url)
 
 soup = BeautifulSoup(response.text, 'html.parser')
-title = soup.get_text()
-#title = soup.find_all("a", {"class": "docsum-title"})
+#title = soup.get_text()
+content = soup.find_all("div", {"class": "docsum-content"})
 
-print(title)
+for result in content:
+    print(result.text)
 
 # send email
 
@@ -28,7 +29,8 @@ msg['From'] = email
 msg['To'] = send_to_email
 msg['Subject'] = subj
 
-msg.attach(MIMEText(title))
+for result in content:
+    msg.attach(MIMEText(result.text))
 
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
