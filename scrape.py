@@ -2,19 +2,6 @@
 Scrapes the titles and descriptions of PubMed articles in response to a keyword
 """
 
-def find_all(substring, string):
-    """
-    Returns all the positions of a substring within a string
-
-    Precondition: substring and string are both non-empty strings
-    """
-    i = string.find(substring)
-    while substring in string == True:
-        yield i
-        i = string.find(substring, i+1)
-
-find_all('a', 'sfasdfasfa')
-
 def pubmed(keyword, size='10', page='1'):
     """
     Returns the titles and descriptions of PubMed articles (10 per page) in response to a keyword
@@ -57,5 +44,3 @@ def pubmed(keyword, size='10', page='1'):
         pos = title_start+1
 
     return titles
-
-pubmed('brain','2')
